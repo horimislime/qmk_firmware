@@ -74,12 +74,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `-------------------------------------------------------------------------------------------------'
    */
   [_QWERTY] = LAYOUT( \
-      KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSLASH, \
-      KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC, \
-      KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
-      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_LALT, KC_LALT, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_UP , \
-      KC_SPC, KC_BSLASH, KC_SLSH, KC_LCMD, KC_LALT, KC_LCMD, KC_SPC,  KC_ENT,  KC_LCMD,   KC_LBRC,    KC_RBRC, KC_LEFT, KC_RGHT,   KC_DOWN \
+      KC_BSLASH,KC_0,    KC_9,    KC_8,    KC_7,    KC_6,                      KC_5,    KC_4,    KC_3,    KC_2,    KC_1,    KC_ESC, \
+      KC_BSPC,  KC_P,    KC_O,    KC_I,    KC_U,    KC_Y,                      KC_T,    KC_R,    KC_E,    KC_W,    KC_Q,    KC_TAB, \
+      KC_QUOT, KC_SCLN,  KC_L,    KC_K,    KC_J,    KC_H,                      KC_G,    KC_F,    KC_D,    KC_S,    KC_A,    KC_LCTL, \
+      KC_UP,   KC_SLSH,  KC_DOT,  KC_COMM, KC_M,    KC_N, KC_A,   KC_LALT,        KC_B,    KC_V,    KC_C, KC_X,  KC_Z, KC_LSFT , \
+      KC_DOWN, KC_RGHT,  KC_LEFT, KC_N,    KC_LBRC, KC_SPC, KC_ENT, KC_SPC,      KC_LCMD, KC_LALT,    KC_LCMD, KC_SLSH, KC_BSLASH,   KC_SPC \
       ),
+
+      /* [_QWERTY] = LAYOUT( \
+      //     KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSLASH, \
+      //     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC, \
+      //     KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, \
+      //     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_LALT, KC_N,    KC_A,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_UP , \
+      //     KC_SPC, KC_BSLASH, KC_SLSH, KC_LCMD, KC_LALT, KC_LCMD, KC_SPC,  KC_ENT, KC_A,   KC_LBRC,    KC_RBRC, KC_LEFT, KC_RGHT,   KC_DOWN \
+    ), */
 
   /* Colemak
    * ,-----------------------------------------.             ,-----------------------------------------.
