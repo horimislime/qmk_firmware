@@ -77,8 +77,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_BSLASH,KC_0,    KC_9,    KC_8,    KC_7,    KC_6,                      KC_5,    KC_4,    KC_3,    KC_2,    KC_1,    KC_ESC, \
       KC_BSPC,  KC_P,    KC_O,    KC_I,    KC_U,    KC_Y,                      KC_T,    KC_R,    KC_E,    KC_W,    KC_Q,    KC_TAB, \
       KC_QUOT, KC_SCLN,  KC_L,    KC_K,    KC_J,    KC_H,                      KC_G,    KC_F,    KC_D,    KC_S,    KC_A,    KC_LCTL, \
-      KC_UP,   KC_SLSH,  KC_DOT,  KC_COMM, KC_M,    KC_N, KC_A,   KC_LALT,        KC_B,    KC_V,    KC_C, KC_X,  KC_Z, KC_LSFT , \
-      KC_DOWN, KC_RGHT,  KC_LEFT, KC_N,    KC_LBRC, KC_SPC, KC_ENT, KC_SPC,      KC_LCMD, KC_LALT,    KC_LCMD, KC_SLSH, KC_BSLASH,   KC_SPC \
+      KC_UP,   KC_SLSH,  KC_DOT,  KC_COMM, KC_M,    KC_N,   KC_LALT,KC_LALT, KC_B,    KC_V,    KC_C,    KC_X,    KC_Z,    KC_LSFT , \
+      KC_DOWN, KC_RGHT,  KC_LEFT, KC_RBRC, KC_LBRC, KC_SPC, KC_ENT, KC_SPC,    KC_LCMD, KC_LALT, KC_LCMD, KC_SLSH, KC_BSLASH, MO(_ADJUST) \
       ),
 
       /* [_QWERTY] = LAYOUT( \
@@ -88,6 +88,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       //     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_LALT, KC_N,    KC_A,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_UP , \
       //     KC_SPC, KC_BSLASH, KC_SLSH, KC_LCMD, KC_LALT, KC_LCMD, KC_SPC,  KC_ENT, KC_A,   KC_LBRC,    KC_RBRC, KC_LEFT, KC_RGHT,   KC_DOWN \
     ), */
+
+    /* Adjust (Lower + Raise)
+     * ,-----------------------------------------.             ,-----------------------------------------.
+     * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |             |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |
+     * |------+------+------+------+------+------|             |------+------+------+------+------+------|
+     * |      | Reset|RGBRST|      |      |      |             |      |      |      |      |      |  Del |
+     * |------+------+------+------+------+------|             |------+------+------+------+------+------|
+     * |      |      |      |Aud on|Audoff| Mac  |             | Win  |Qwerty|Colemk|Dvorak|      |      |
+     * |------+------+------+------+------+------+------+------+------+------+------+------+------+------|
+     * |      |      |      |      |      |      |      |      |      |      |RGB ON| HUE+ | SAT+ | VAL+ |
+     * |------+------+------+------+------+------+------+------+------+------+------+------+------+------|
+     * |      |      |      |      |      |      |      |      |      |      | MODE | HUE- | SAT- | VAL- |
+     * `-------------------------------------------------------------------------------------------------'
+     */
+    [_ADJUST] =  LAYOUT( \
+        KC_MINUS,KC_EQUAL, KC_F3,  KC_F4,  RGB_M_G, KC_GRAVE,                 RGB_M_P, RGB_M_B,RGB_M_R,RGB_M_SW,RGB_M_SN,RGB_M_K, \
+        _______, _______, _______,_______, _______, _______,                   _______, RESET, _______, _______, _______, _______, \
+        _______, _______, _______, AU_ON,   AU_OFF,  AG_NORM,                   AG_SWAP, _______,  _______, _______,  _______, _______, \
+        _______, _______, _______, _______, _______, _______, _______, _______, RGB_TOG, _______, _______, _______, _______, _______, \
+        RGBRST, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,_______, _______, _______ \
+      ),
 
   /* Colemak
    * ,-----------------------------------------.             ,-----------------------------------------.
@@ -171,27 +192,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     KC_F6,   KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS, \
       _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  _______, _______, KC_F12,  _______, _______, KC_PGDN, KC_PGUP, _______, \
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY \
-      ),
-
-  /* Adjust (Lower + Raise)
-   * ,-----------------------------------------.             ,-----------------------------------------.
-   * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |             |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |
-   * |------+------+------+------+------+------|             |------+------+------+------+------+------|
-   * |      | Reset|RGBRST|      |      |      |             |      |      |      |      |      |  Del |
-   * |------+------+------+------+------+------|             |------+------+------+------+------+------|
-   * |      |      |      |Aud on|Audoff| Mac  |             | Win  |Qwerty|Colemk|Dvorak|      |      |
-   * |------+------+------+------+------+------+------+------+------+------+------+------+------+------|
-   * |      |      |      |      |      |      |      |      |      |      |RGB ON| HUE+ | SAT+ | VAL+ |
-   * |------+------+------+------+------+------+------+------+------+------+------+------+------+------|
-   * |      |      |      |      |      |      |      |      |      |      | MODE | HUE- | SAT- | VAL- |
-   * `-------------------------------------------------------------------------------------------------'
-   */
-  [_ADJUST] =  LAYOUT( \
-      KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                     KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12, \
-      _______, RESET,   RGBRST,  _______, _______, _______,                   _______, _______, _______, _______, _______, KC_DEL, \
-      _______, _______, _______, AU_ON,   AU_OFF,  AG_NORM,                   AG_SWAP, QWERTY,  COLEMAK, DVORAK,  _______, _______, \
-      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, \
-      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, RGB_SMOD,RGB_HUD, RGB_SAD, RGB_VAD \
       )
 };
 
